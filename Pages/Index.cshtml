@@ -1,0 +1,96 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    body {
+        background-color: #f4f4f9; 
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    .text-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    h1 {
+        color: #ff6347; 
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 200px;
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: #4c68af; 
+        color: rgb(136, 112, 222);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #32227e; 
+        transform: scale(1.05); 
+    }
+
+    p {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333; 
+    }
+
+    h3 {
+        color: #333;
+        margin-top: 30px;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">SIMPLE CALCULATOR</h1>
+
+    <form action="" method="POST">
+        <input type="text" placeholder="Enter Value" name="value" required>
+        <input type="text" placeholder="Enter Exponent" name="exponent" required>
+        <input type="submit" value="Calculate Exponent">
+        <p>Result of Exponentiation: @ViewData["exponentiationResult"]</p>
+    </form>
+
+    <form action="" method="POST">
+        <input type="text" placeholder="Enter Num1" name="num1" required>
+        <input type="text" placeholder="Enter Num2" name="num2" required>
+        <input type="submit" value="Add" name="add">
+        <input type="submit" value="Subtract" name="subtract">
+        <input type="submit" value="Multiply" name="multiply">
+        <input type="submit" value="Divide" name="divide">
+        <p>Result of Addition: @ViewData["additionResult"]</p>
+        <p>Result of Subtraction: @ViewData["subtractionResult"]</p>
+        <p>Result of Multiplication: @ViewData["multiplicationResult"]</p>
+        <p>Result of Division: @ViewData["divisionResult"]</p>
+    </form>
+
+    <h3>Square and Cube Calculations:</h3>
+    <form action="" method="POST">
+        <input type="text" placeholder="Enter Value for Square & Cube" name="squareCubeValue" required>
+        <input type="submit" value="Calculate Square & Cube">
+    </form>
+
+    <p>Square of Value: @ViewData["squareResult"]</p>
+    <p>Cube of Value: @ViewData["cubeResult"]</p>
+</div>
